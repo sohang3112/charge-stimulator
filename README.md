@@ -15,3 +15,7 @@ since the last one (done in C++ using SFML) was quite buggy and had no UI at all
 **SERVER CODE**
 - User sign up / sign in
 - Create / Edit / Save files representing system of charges (format: JSON)
+
+**CLIENT CODE**
+*Note*: Client code needs to be run on fake server, which serves code from localhost (eg. live-server)
+        (This is because of CORS policy for scripts, which applies when using ES5 modules)
