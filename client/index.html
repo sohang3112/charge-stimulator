@@ -13,8 +13,13 @@
     <noscript>
         This page requires javascript to run. Please allow javascript to run by changing your browser settings.
     </noscript>
-    <script>
+    <script type="module">
+        import {PointCharge} from '/js/PointCharge.js';
+
         const canvas = document.getElementById('stimulator');
         const ctx    = canvas.getContext('2d');
+
+        new PointCharge(1, 1, {x:30, y:30}).render(ctx);
     </script>
 </body>
+</html>
