@@ -6,11 +6,10 @@ const MINUS_CHARGE_COLOR   = 'skyblue';
 const NEUTRAL_CHARGE_COLOR = 'white';
 
 export class PointCharge {
-    constructor(mass, charge, centre) {
-        this.mass   = mass;
-        this.charge = charge;
-        this.centre = centre;
+    constructor(info) {
+        Object.assign(this, info);
         
+        const charge = this.charge;
         Object.defineProperties(this, {
             radius: {value: POINT_RADIUS},
             color:  {value: charge >= 0 ? charge == 0 ? NEUTRAL_CHARGE_COLOR : MINUS_CHARGE_COLOR : PLUS_CHARGE_COLOR}
@@ -18,10 +17,12 @@ export class PointCharge {
     }
 
     render(context) {               // drawing context, obtained from canvas
-        drawCircle(context, this.centre, this.radius, {
+        drawCircle(context, this.pos, this.radius, {
             fill:   {color: this.color},
             stroke: null
         });
     }
+
+
 }
 

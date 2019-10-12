@@ -19,7 +19,16 @@
         const canvas = document.getElementById('stimulator');
         const ctx    = canvas.getContext('2d');
 
-        new PointCharge(1, 1, {x:30, y:30}).render(ctx);
+        new PointCharge({
+            mass: 1,                // kg
+            charge: 1,              // coulumb
+            pos: {x:30, y:30},
+            velocity: {x:10, y:-5}
+        }).render(ctx);
+
+        window.canvas = canvas;
+        window.ctx    = ctx;
+        window.PointCharge = PointCharge;
     </script>
 </body>
 </html>
