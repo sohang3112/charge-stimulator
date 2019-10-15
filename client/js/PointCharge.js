@@ -23,11 +23,14 @@ export class PointCharge {
         });                         // read only properties
     }
 
+    /** @param {CanvasRenderingContext2d} context */
     render(context) {               // drawing context, obtained from canvas
         drawCircle(context, this.pos.as(DEFAULT_LENGTH_UNIT), this.radius.as(DEFAULT_LENGTH_UNIT), {
             fill:   {color: this.color},
             stroke: null
         });
     }
+
+    accelerate
 }
 
