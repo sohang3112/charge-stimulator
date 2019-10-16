@@ -15,16 +15,15 @@
     </noscript>
     <script type="module">
         import {PointCharge} from '/js/PointCharge.js';
-        import {Unit} from '/js/Unit.js'
 
         const canvas = document.getElementById('stimulator');
         const ctx    = canvas.getContext('2d');
 
         new PointCharge({
-            mass:     new Unit(1, 'kilogram'),                
-            charge:   new Unit(3, 'coulumb'),
-            pos:      new Unit({x:30, y:30}, 'pixel'),
-            velocity: new Unit({x:10, y:-5}, 'pixel/second')
+            mass:     1,                // kg                
+            charge:   3,                // columb
+            pos:      {x:30, y:50},     
+            velocity: {x:10, y:-5}
         }).render(ctx);
 
         window.canvas = canvas;
